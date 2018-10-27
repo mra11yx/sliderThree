@@ -1,0 +1,63 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 auto;
+    left: auto;
+    width: 90%;
+    background-color: #fff;
+}
+
+/* slider container */
+/* use relative positioning so that we can absolutely position the fake thum */
+.slider {
+    position: relative;
+    border: 2px solid #000;
+    width: 100%;
+}
+
+.slider label {
+    display: inline-block;
+}
+
+.slider input[type='range'] {
+    -webkit-appearance: none;
+    display: inline-block;
+    width: 100%;
+}
+
+/* fake div thumb*/
+.thumb {
+    height: 4rem;
+    width: 100%;
+    background-color: #219;
+    color: #fff;
+    position: absolute;
+    
+}
+
+
+/* browser-specific input hacks */
+.slider input[type='range']::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 1rem;
+    background-color: #555;
+    border: 2px solid #000;
+    border-radius: 1rem;
+}
+
+.slider input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 2rem;
+    width: 2rem;
+    margin-top: -.5rem;
+    background-color: #219;
+    border: 2px solid #000;
+    border-radius: 100%;
+}
+
+.slider input[type='range']::-moz-range-track {}
+
+.slider input[type='range']::-ms-track {}
