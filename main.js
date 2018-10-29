@@ -19,7 +19,7 @@ function adjThumbs(percentage, rot, floatVal) {
         propThumbs.forEach(function (thumbType) {
             // thumbHeight += ".slider input[type='range']::" + thumbType + " {background-color: rgba(" + percentage * 255 + "," + percentage * 255 + "," + percentage * 255 + ",1" + "); transform: scale(" + floatVal + ");}";
             // thumbHeight += ".slider input[type='range']::" + thumbType + " {background-color: rgba(" + percentage * 255 + "," + percentage * 255 + "," + percentage * 255 + ",1" + "); transform: scale(" + 1 + ") rotate("+rot+"deg);}";
-            // thumbHeight += ".slider input[type='range']::" + thumbType + " {background-color: rgba(" + percentage * 255 + "," + percentage * 255 + "," + percentage * 255 + ",1" + "); transform: scale(" + 1 + ");}";
+            thumbHeight += ".slider input[type='range']::" + thumbType + " {background-color: rgba(" + percentage * 255 + "," + percentage * 255 + "," + percentage * 255 + ",1" + "); transform: scale(" + 1 + ");}";
         });
     }
     return thumbHeight;
@@ -91,6 +91,17 @@ function setSlider(evt, minVal, maxVal, currVal, percentage, rot, currResults) {
 
 
 sliders.forEach(function (elem) {
+
+    elem.multEvs(["mouseover","focus"], function(evt) {
+        console.log("focused");
+        resultsEl.classList.add("focusedVis");
+    });
+
+    elem.ev(["blur"], function(evt) {
+        resultsEl.classList.remove("focusedVis");
+
+    });
+
     console.log(elem);
     let maxVal = elem.max;
     let minVal = elem.min;

@@ -45,12 +45,20 @@ body {
     pointer-events: none;
 } */
 
+.focusedVis {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: all 200ms ease-in-out;
+}
+
 
 .resultsEl {
+    opacity: 0;
+    visibility: hidden;
     font-size: 1.5rem;
     position: absolute;
     display: block;
-    margin-top: -1rem;
+    margin-top: 2rem;
     z-index: 3;
     pointer-events: none;
     color: #222;
@@ -63,8 +71,9 @@ body {
     line-height: 3rem;
     border-radius: 100%;
     box-shadow: 0 0 2px 1px #222;
-    /* transition: all 50ms ease-in-out; */
+    transition: opacity 200ms ease-in-out;
 }
+
 .slider:hover .resultsEl {
     cursor: pointer;
     box-shadow: 0 0 3px 2px #222;
@@ -123,7 +132,7 @@ datalist option {
 }
 
 .slider input[type='range'] {
-    /* -webkit-appearance: none; */
+    -webkit-appearance: none;
     /* opacity: 0; */
     margin: auto;
     height: 1.5rem;
@@ -134,34 +143,35 @@ datalist option {
 
 /* browser-specific input hacks */
 .slider input[type='range']::-webkit-slider-runnable-track {
--webkit-appearance: none;
+    -webkit-appearance: none;
     height: 1rem;
     background-color: #222;
     border: 2px solid #000;
-    border-radius: 1rem; 
+    border-radius: 1rem;
 }
 
 .slider input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    opacity: 0;
+    z-index: 3;
+    /* opacity: 0; */
     height: 2rem;
     width: 1rem;
     /* width has to be 1rem for fake slider to be at the right spot */
-    /* margin-top: -1rem; */
+    margin-top: -1rem;
     border: .1rem solid #116;
     box-shadow: 0 0 5px 1px #222;
 }
 
 .slider input[type='range']::-moz-range-track {
     /* -moz-appearance: none; */
-    height: 2rem;
+    height: 5rem;
     background-color: #222;
     border: 2px solid #000;
-    border-radius: 1rem; 
+    border-radius: 1rem;
 }
 
 .slider input[type='range']::-moz-range-thumb {
-    opacity: 0;
+    /* opacity: 0; */
     height: 2rem;
     width: 1rem;
     /* width has to be 1rem for fake slider to be at the right spot */
@@ -180,7 +190,7 @@ datalist option {
 }
 
 .slider input[type='range']::-ms-thumb {
-    
+
     height: 4rem;
     width: 1rem;
     /* width has to be 1rem for fake slider to be at the right spot */
