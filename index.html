@@ -13,15 +13,23 @@
     <h1>Slider test</h1>
     <div class="slider">
         <label for="slider1">Select some pizzas:</label>
-        <input type="range" id="slider1" min="0" max="100" value="0" aria-valuenow="0" aria-valuetext="0 pizzas">
-        <div class="flex"><div class="thumb" aria-hidden="true"></div>
-        <div class="thumb" aria-hidden="true"></div></div>
-        
+        <div class="resultsContainer">
+            <div class="resultsEl" aria-hidden="true"></div>
+        </div>
+        <input type="range" list="tickmarks1" id="slider1" min="0" max="100" value="50">
+        <!-- <div class="fakeSlider"></div> -->
+        <!-- <datalist id="tickmarks1">
+
+
+        </datalist> -->
+
 
     </div>
 
-    <div class="flex"><div class="blue"></div>
-    <div class="red"></div></div>
+    <!-- <div class="flex">
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div> -->
 
     <script src="shorten.js"></script>
     <script src="main.js"></script>
